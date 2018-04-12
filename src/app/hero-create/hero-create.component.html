@@ -1,0 +1,22 @@
+<p><span>Name:</span>
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="hero.name"
+    required #name="ngModel"
+    (blur)="onBlurHandle(hero.name)"
+  />
+</p>
+<div *ngIf="!nameValid" class="error">
+  Name is required!
+</div>
+
+<p><span>Rate:</span>
+  <input
+    type="number"
+    name="rate"
+    [(ngModel)]="hero.rate"
+  />
+</p>
+
+<button (click)="onClickCreateButton()">Create</button>

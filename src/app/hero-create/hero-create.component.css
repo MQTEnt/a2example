@@ -1,0 +1,7 @@
+p span{
+  display: inline-block;
+  width: 80px;
+}
+.error{
+  color: #dc5514;
+}

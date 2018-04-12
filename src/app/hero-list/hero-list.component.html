@@ -1,0 +1,14 @@
+<h4>List Hero</h4>
+  <button (click)="showCreateForm = !showCreateForm">{{(!showCreateForm)? 'Show':'Hide'}} form</button>
+  <div *ngIf="showCreateForm">
+    <app-hero-create [clickAddHandle]="addHero.bind(this)"></app-hero-create>
+  </div>
+<ul>
+  <li *ngFor="let hero of heroes" (click)="selectHero(hero)">{{hero.name}}</li>
+</ul>
+<br>
+<div *ngIf="selectedHero">
+  <p><b>You selected: </b></p>
+  <p>ID: {{selectedHero.id}}, name: {{selectedHero.name}}, rate: {{selectedHero.rate}}</p>
+  <a [routerLink]="['/hero', selectedHero.id]"><button> Detail</button></a>
+</div>
